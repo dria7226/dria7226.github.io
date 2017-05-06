@@ -167,7 +167,13 @@
 
 
     function webGLStart() {
-        var canvas = document.getElementById("lesson01-canvas");
+        var canvas = document.getElementById("canvas");
+        canvas.width = window.innerWidth
+                || document.documentElement.clientWidth
+                || document.body.clientWidth;
+        canvas.height = window.innerHeight
+                || document.documentElement.clientHeight
+                || document.body.clientHeight;
         initGL(canvas);
         initShaders();
         initBuffers();
